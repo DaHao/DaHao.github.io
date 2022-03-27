@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>如何查看 K8S 的 Job Log</title>
+    <link href="/2022/03/27/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B-K8S-%E7%9A%84-Job-Log/"/>
+    <url>/2022/03/27/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B-K8S-%E7%9A%84-Job-Log/</url>
+    
+    <content type="html"><![CDATA[<p>攝影師：<a href="https://www.pexels.com/zh-tw/@ruca-souza-32753?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Ruca Souza</a>，連結：<a href="https://www.pexels.com/zh-tw/photo/1049764/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Pexels</a></p><hr /><p>最近有個需求，要在 kubernetes 的 Job 上面查錯。</p><p>問題是 Job 不是 pod，沒有辦法用 <code>kubectl logs</code> 來看 log 記錄，該怎麼做才好呢？</p><span id="more"></span><p>在網路上查了作法，在此記錄一下。<br><br /></p><p>下指令：<code>$ kubectl describe jobs $JOB</code></p><p>在 job 的 Event 項目底下會有 job 開出來的 pod 名稱。</p><p>再下指令 <code>$ kubectl logs $POD</code>，就可以看到 job 相關的 log 了。</p><p>但是如果超過 <code>activeDeadlineSeconds</code> 的時間的話，pod 也會被砍掉，就沒辦法再看 log 了。<br><br /></p><p>最近忙著在交界地上大殺特殺……喔，對了，這個大殺特殺的受詞是我 (☍﹏⁰)</p><p>有空的話應該會寫一篇談談我對艾爾登法環的看法 (挖坑</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Kubernetes</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Mac 更新至 Monterey 後，觸控板無法使用</title>
     <link href="/2022/02/19/Mac-%E6%9B%B4%E6%96%B0%E8%87%B3-Monterey-%E5%BE%8C%EF%BC%8C%E8%A7%B8%E6%8E%A7%E6%9D%BF%E7%84%A1%E6%B3%95%E4%BD%BF%E7%94%A8/"/>
     <url>/2022/02/19/Mac-%E6%9B%B4%E6%96%B0%E8%87%B3-Monterey-%E5%BE%8C%EF%BC%8C%E8%A7%B8%E6%8E%A7%E6%9D%BF%E7%84%A1%E6%B3%95%E4%BD%BF%E7%94%A8/</url>
